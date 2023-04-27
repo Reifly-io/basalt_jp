@@ -74,8 +74,6 @@ class FrameToFrameOpticalFlow : public OpticalFlowBase {
   FrameToFrameOpticalFlow(const VioConfig& config,
                           const basalt::Calibration<double>& calib)
       : t_ns(-1), frame_counter(0), last_keypoint_id(0), config(config) {
-    std::cout << "I am in the Frame to Frame optical flow ctor\n";
-    
     input_queue.set_capacity(10);
 
     this->calib = calib.cast<Scalar>();
